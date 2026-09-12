@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vinhomes | Tiếp nhận phản ánh</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f3f6fa;color:#182e47;font:16px/1.6 system-ui,sans-serif}header{background:#122b46;color:white;padding:28px max(5vw,20px)}header small{color:#e5c181;letter-spacing:2px}h1{font-size:28px;margin:5px 0}main{max-width:1150px;margin:28px auto;padding:0 20px}.flow{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}.flow span{background:#e4ecf4;border-radius:20px;padding:6px 16px;font-size:14px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.card{background:white;border:1px solid #dce4ed;border-radius:16px;padding:28px;box-shadow:0 8px 28px #18324d07}h2{font-size:20px;margin:0 0 18px}label{display:block;font-weight:600;margin-top:16px}input,select,textarea,button{font:inherit}input,select,textarea{width:100%;padding:12px;border:1px solid #bdcad8;border-radius:8px;background:white;color:#182e47}textarea{min-height:145px;resize:vertical}button{border:0;border-radius:8px;padding:12px 18px;cursor:pointer;background:#173e64;color:white;margin-top:18px}button:disabled{opacity:.5;cursor:wait}.samples button{background:#edf3f9;color:#204869;font-size:13px;margin:8px 4px 0 0;padding:7px 12px}.muted{color:#63778a;font-size:14px}.badge{display:inline-block;background:#fff2d4;color:#87520b;border-radius:6px;padding:4px 10px;font-size:13px}.route{background:#edf5fb;padding:18px;border-radius:10px;margin:18px 0;font-size:20px;font-weight:600}.notice{background:#fff3df;border-left:4px solid #e6b35c;padding:12px;margin:14px 0}.success{background:#e3f5ed;color:#1c674a;padding:16px;border-radius:8px}.hidden{display:none}#message{color:#a12e2e}blockquote{margin:14px 0;padding-left:14px;border-left:3px solid #c6d6e7;white-space:pre-wrap;overflow-wrap:anywhere}footer{margin:26px 0;font-size:13px;color:#66798d}@media(max-width:760px){.grid{grid-template-columns:1fr}.card{padding:20px}}:focus-visible{outline:3px solid #e0b566;outline-offset:2px}
+</style>
+<header><small>VINHOMES · DEMO</small><h1>Tiếp nhận phản ánh cư dân</h1><div>Đúng sự cố. Đúng tòa nhà. Đúng bộ phận phụ trách.</div></header>
+<main><div class="flow"><span>1 · Cư dân gửi</span><span>2 · Phân loại & đề xuất</span><span>3 · Nhân viên duyệt</span></div>
+<div class="grid"><section class="card"><h2>Gửi phản ánh</h2><form id="intake">
+<label for="mode">Chế độ phân loại</label><select id="mode"><option value="demo">Demo từ khóa — không cần API</option><option value="gemini">Gemini AI — cần API key</option></select><p class="muted">Demo từ khóa giúp trình bày luồng ngay, không phải kết quả AI. Chế độ Gemini gửi nội dung đến API; hãy dùng dữ liệu giả lập.</p>
+<label for="building">Tòa nhà</label><select id="building"><option value="DEMO-A">Tòa DEMO-A</option><option value="DEMO-B">Tòa DEMO-B</option></select>
+<label for="text">Nội dung phản ánh</label><textarea id="text" required maxlength="10000" placeholder="Ví dụ: Đèn hành lang không sáng, đề nghị ban quản lý kiểm tra."></textarea>
+<div class="samples">
+<p class="muted">Chọn tình huống mẫu tại khu vực dùng chung, rồi bấm gửi.</p>
+<strong>Nước &amp; điện</strong><br>
+<button type="button" data-sample="Khu vực sinh hoạt chung bị mất nước." data-category="mat_nuoc">Mất nước</button>
+<button type="button" data-sample="Đường ống khu vực sảnh bị rò rỉ nước." data-category="mat_nuoc">Rò rỉ nước</button>
+<button type="button" data-sample="Áp lực nước thấp tại khu vệ sinh chung." data-category="mat_nuoc">Nước yếu</button>
+<button type="button" data-sample="Tắc cống thoát nước tại khu vực sân chung." data-category="mat_nuoc">Tắc thoát nước</button>
+<button type="button" data-sample="Đèn hành lang không sáng." data-category="hong_den">Hỏng đèn</button>
+<button type="button" data-sample="Đèn chiếu sáng tại sảnh nhấp nháy." data-category="hong_den">Đèn chập chờn</button>
+<button type="button" data-sample="Khu vực sinh hoạt chung bị mất điện." data-category="hong_den">Mất điện</button>
+<br><strong>Vệ sinh &amp; sinh hoạt</strong><br>
+<button type="button" data-sample="Rác tại khu vực tập kết chưa được thu gom." data-category="ve_sinh">Thu gom rác</button>
+<button type="button" data-sample="Khu vực hành lang có mùi hôi." data-category="ve_sinh">Mùi hôi</button>
+<button type="button" data-sample="Sàn sảnh bị bẩn, cần vệ sinh." data-category="ve_sinh">Sàn bẩn</button>
+<button type="button" data-sample="Có tiếng ồn lớn tại khu sinh hoạt chung." data-category="on_ao">Tiếng ồn</button>
+<button type="button" data-sample="Tiếng khoan tại khu vực chung ảnh hưởng sinh hoạt." data-category="on_ao">Tiếng khoan</button>
+<br><strong>An ninh &amp; cần xem xét</strong><br>
+<button type="button" data-sample="Có xe đỗ xe sai vị trí tại lối vào chung." data-category="an_ninh">Đỗ xe sai</button>
+<button type="button" data-sample="Cổng ra vào khu vực chung không đóng được." data-category="an_ninh">Cổng ra vào</button>
+<button type="button" data-sample="Thang máy ngừng hoạt động, chưa ghi nhận người mắc bên trong." data-category="khac">Thang máy</button>
+<button type="button" data-sample="Đề nghị làm rõ cách tính phí quản lý khu vực chung." data-category="phi_quan_ly">Phí quản lý</button>
+<button type="button" data-sample="Có khói tại khu vực hành lang, cần kiểm tra ngay." data-category="khac">Dấu hiệu nguy hiểm</button>
+<p class="muted">Thang máy chưa có nhóm kỹ thuật riêng trong demo nên chuyển BQL xem xét; phí và dấu hiệu nguy hiểm cũng cần người xử lý.</p>
+</div>
+<button id="send" type="submit">Gửi & đề xuất nơi xử lý →</button><p id="message" role="alert"></p></form></section>
+<section class="card"><h2>Ban quản lý · Duyệt đề xuất</h2><div id="empty" class="muted">Gửi một phản ánh bên trái để xem sự cố, tòa nhà và bộ phận được đề xuất.</div>
+<div id="ticket" class="hidden" aria-live="polite"><span class="badge" id="status"></span><p class="muted" id="ticketmeta"></p><blockquote id="original"></blockquote><div id="classification"></div><div class="route" id="route"></div><div id="notice" class="notice hidden"></div>
+<form id="review"><label for="team">Bộ phận tiếp nhận (có thể sửa)</label><select id="team"></select><label for="reviewer">Nhân viên duyệt</label><input id="reviewer" required maxlength="100" placeholder="Nhập tên nhân viên demo"><button id="approve">Duyệt chuyển xử lý</button></form><div id="approved" class="success hidden"></div></div></section></div>
+<footer>Tòa nhà và bộ phận là dữ liệu giả lập. Duyệt chỉ ghi nhận trong phiên demo, chưa gửi yêu cầu sửa chữa thật. Không có đăng nhập/phân quyền; dữ liệu mất khi tắt server.</footer></main>
+<script>
+const token='__TOKEN__';const $=id=>document.getElementById(id);let current=null;
+const teams={ky_thuat_nuoc:'Kỹ thuật nước',ky_thuat_dien:'Kỹ thuật điện',an_ninh:'An ninh',ve_sinh:'Vệ sinh',ban_quan_ly:'Ban quản lý — xem xét thủ công'};
+const cats={mat_nuoc:'Mất nước',hong_den:'Điện / hỏng đèn',on_ao:'Ồn ào',ve_sinh:'Vệ sinh',an_ninh:'An ninh',phi_quan_ly:'Phí quản lý',tranh_chap:'Tranh chấp',khac:'Cần phân loại thủ công'};
+async function post(path,data){const response=await fetch(path,{method:'POST',headers:{'Content-Type':'application/json','X-Demo-Token':token},body:JSON.stringify(data)});const result=await response.json();if(!response.ok)throw Error(result.error||'Không thể xử lý.');return result}
+function show(t){current=t;const r=t.result;$('empty').classList.add('hidden');$('ticket').classList.remove('hidden');$('status').textContent=t.status==='approved'?'Đã duyệt trong demo':'Bản nháp · Chờ duyệt';$('ticketmeta').textContent=`Vé #${t.id} · Tòa ${t.building} · ${t.mode==='demo'?'Demo từ khóa':'Gemini AI'}`;$('original').textContent=t.text;$('classification').textContent='Sự cố: '+cats[r.category];$('route').textContent='BQL '+t.building+' → '+(r.route_target?teams[r.route_target.split('/')[1]]:'Xem xét thủ công');$('notice').classList.toggle('hidden',!r.escalate&&!r.error);$('notice').textContent=r.priority==='emergency'?'Ưu tiên khẩn cấp: cần người trực kiểm tra ngay.':r.error?`Phân loại AI chưa thành công (${r.error}). ${r.error==='gemini_http_429'?'API đang giới hạn quota/tốc độ. ':''}Nhân viên có thể tiếp nhận thủ công.`:r.draft_note;
+$('team').replaceChildren();for(const [key,name]of Object.entries(teams)){if(r.escalate&&key!=='ban_quan_ly')continue;const o=new Option(name,key);$('team').add(o)}$('team').value=r.route_target?r.route_target.split('/')[1]:'ban_quan_ly';$('review').classList.toggle('hidden',t.status==='approved');$('approved').classList.toggle('hidden',t.status!=='approved');if(t.approval)$('approved').textContent=`${t.approval.reviewer} đã duyệt: BQL ${t.building} → ${teams[t.approval.route.split('/')[1]]}. Chưa gửi yêu cầu thật.`}
+document.querySelectorAll('[data-sample]').forEach(b=>b.onclick=()=>{$('text').value=b.dataset.sample});
+$('intake').onsubmit=async e=>{e.preventDefault();$('message').textContent='';$('send').disabled=true;$('approve').disabled=true;$('send').textContent='Đang phân loại…';try{show(await post('/classify',{text:$('text').value,building:$('building').value,mode:$('mode').value}))}catch(err){$('message').textContent=err.message}finally{$('send').disabled=false;$('approve').disabled=false;$('send').textContent='Gửi & đề xuất nơi xử lý →'}};
+$('review').onsubmit=async e=>{e.preventDefault();if(!current)return;$('approve').disabled=true;$('send').disabled=true;$('message').textContent='';try{show(await post('/approve',{id:current.id,team:$('team').value,reviewer:$('reviewer').value}))}catch(err){$('message').textContent=err.message}finally{$('approve').disabled=false;$('send').disabled=false}};
+</script></html>
