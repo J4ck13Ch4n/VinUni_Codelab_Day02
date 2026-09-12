@@ -1,5 +1,4 @@
 # 🏗️ Phase 3 — DEEP-DIVE (Nhóm, 85 min)
-
 ## 3.1. Current-State Workflow Mapping (25 min)
 Quy trình xử lý phản ánh cư dân hiện tại của nhân viên Ban quản lý Vinhomes:
 

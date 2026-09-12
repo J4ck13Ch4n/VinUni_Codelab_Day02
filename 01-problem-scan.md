@@ -1,5 +1,4 @@
 # 🔍 Phase 1 — SCAN (Cá nhân, 20 min)
-
 Dùng 4 Lenses quét qua vận hành của các công ty thành viên Vingroup.
 
 | # | Subsidiary | Lens | Mô tả ngắn bài toán |
